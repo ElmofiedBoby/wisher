@@ -79,12 +79,12 @@ def main():
     current_user = None
 
     user_input = input("> ")
-    if user_input != "quit":
+    if user_input != "quit" and user_input != "exit":
         logged_in, current_user = process_inputs(user_input, logged_in, current_user)
     else:
         print("Quitting...")
 
-    while user_input != "quit":
+    while user_input != "quit" and user_input != "exit":
         user_input = input("> ")
         logged_in, current_user = process_inputs(user_input,  logged_in, current_user)
 
