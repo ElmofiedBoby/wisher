@@ -47,8 +47,12 @@ class User:
         wish.set_place(size)
         self.__wishlist.append(wish)
 
-    def remove_wish(self, wish):
-        self.__wishlist.remove(wish)
+    def remove_wish(self, index):
+        if index > 0 and index <= len(self.__wishlist):
+            index = index - 1
+            self.__wishlist.remove(self.__wishlist.get(index))
+        else:
+            print("Invalid index for removal!")
 
     def list_wishes(self):
         print("# | $ | Name | Link")
