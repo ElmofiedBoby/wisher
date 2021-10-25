@@ -1,7 +1,9 @@
 from user import *
 from item import Item
+import numpy as np
 
 users = []
+save_data = np.asarray(users)
 
 users.append(User("nithliveslife", "1234", "Nithin", "Joseph"))
 users.append(User("testuser", "5678", "Lorem", "Ipsum"))
@@ -22,3 +24,12 @@ def get_user(user_string):
 
 def view_list(user):
     user.list_wishes()
+
+def update():
+    save_data = np.asarray(users)
+
+def save():
+    np.savetxt('save_data.csv', save_data, delimiter=',')
+
+def load():
+    save_data = np.loadtxt('save_data.csv', delimiter=',')
