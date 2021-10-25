@@ -1,6 +1,6 @@
 from user import User
 from item import Item
-from storage import *
+from storage_manipulation import store
 
 from getpass import getpass
 
@@ -20,14 +20,15 @@ def process_inputs(user_input, logged_in, current_user):
     elif user_input == "create":
         username = input("Username: ")
         password = input("Password: ")
-        add_user(User(username, password, "Nithin", "Joseph"))
+        user = User(username, password, "Nithin", "Joseph")
+        store().add_user(user)
         print("Account created successfully!")
 
     elif inputs[0] == "login" and len(inputs) == 2:
         user_found = False
         username = inputs[1]
 
-        for user in get_users():
+        for user in store().get_users():
             if user.get_uname() == username:
                 user_found = True
                 current_user = user
@@ -73,14 +74,26 @@ def process_inputs(user_input, logged_in, current_user):
                 current_user.list_wishes()
             elif(len(inputs) == 2):
                 user = inputs[1]
-                user_f = get_user(user)
+                user_f = store().get_user(user)
                 if(user_f != None):
-                    view_list(user_f)
+                    store().view_list(user_f)
                 else:
                     print("User not found")
             else:
                 print("Invalid Arguments!")
-    
+
+    elif user_input == "update":
+        store().update()
+        print("Data Updated.")
+
+    elif user_input == "save":
+        store().save()
+        print("Data saved.")
+
+    elif user_input == "load":
+        store().load()
+        print("Data loaded.")
+
     else:
         print("Invalid Command!")
     
