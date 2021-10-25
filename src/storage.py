@@ -5,7 +5,7 @@ users = []
 
 users.append(User("nithliveslife", "1234", "Nithin", "Joseph"))
 users.append(User("testuser", "5678", "Lorem", "Ipsum"))
-users[1].add_wish(Item("Pogger", users[1], None, False, None, "amazon.com", "69"))
+users[1].add_wish(Item("Laptop", users[1], None, False, None, "amazon.com", "1400"))
 
 def add_user(user):
     users.append(user)
