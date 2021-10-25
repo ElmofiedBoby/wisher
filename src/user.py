@@ -55,6 +55,6 @@ class User:
             print("Invalid index for removal!")
 
     def list_wishes(self):
-        print("# | $ | Name | Link")
+        print("{}\n# | $ | Name | Link".format(self.__uname))
         for wish in self.__wishlist:
             print("{} | ${} | {} | {}".format(wish.get_place(), wish.get_cost(), wish.get_name(), wish.get_link()))

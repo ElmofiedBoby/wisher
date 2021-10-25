@@ -66,6 +66,18 @@ def process_inputs(user_input, logged_in, current_user):
 
         else:
             current_user.list_wishes()
+
+    elif user_input == "viewlist":
+        if is_logged_in(current_user, logged_in) is False:
+            print("You aren't logged in.")
+
+        else:
+            user = input("Enter username: ")
+            user_f = get_user(user)
+            if(user_f != None):
+                view_list(user_f)
+            else:
+                print("User not found")
     
     else:
         print("Invalid Command!")
