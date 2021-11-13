@@ -24,16 +24,11 @@ class store:
         user.list_wishes()
 
     def save(self):
-        for user in store.users:
-            store_data.get_users().append(user)
-
         filehandler = open('save_data', 'wb')
-        save_data = store_data()
-        pickle.dump(save_data, filehandler)
+        pickle.dump(self.users, filehandler)
 
     def load(self):
          filehandler = open('save_data', 'rb')
-         save_data = pickle.load(filehandler)
-         store.users = []
-         for user in save_data.get_users():
-             store.users.append(user)
+         self.users = pickle.load(filehandler)
+
+         return self.users

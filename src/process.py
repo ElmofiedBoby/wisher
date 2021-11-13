@@ -91,7 +91,10 @@ def process_inputs(user_input, logged_in, current_user):
         print("Data saved.")
 
     elif user_input == "load":
-        store().load()
+        temp = []
+        temp = store().load()
+        for i in temp:
+            store().add_user(i)
         print("Data loaded.")
 
     else:
