@@ -1,5 +1,4 @@
 from user import *
-from store import store_data
 import numpy as np
 import pickle
 
