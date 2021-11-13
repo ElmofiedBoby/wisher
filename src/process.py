@@ -82,10 +82,6 @@ def process_inputs(user_input, logged_in, current_user):
             else:
                 print("Invalid Arguments!")
 
-    elif user_input == "update":
-        store().update()
-        print("Data Updated.")
-
     elif user_input == "save":
         store().save()
         print("Data saved.")
